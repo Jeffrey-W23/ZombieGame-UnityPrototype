@@ -38,5 +38,10 @@ public class Player : MonoBehaviour
 		{
 			rb.velocity += Vector2.right * m_fspeed * Time.deltaTime;
 		}
+
+		if (Input.GetKey(KeyCode.Escape))
+		{
+			Application.Quit();
+		}
 	}
 }
