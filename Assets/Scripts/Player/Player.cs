@@ -8,12 +8,12 @@ public class Player : MonoBehaviour
 	public float m_fspeed = 0.002f;
 
 	// Get rigid
-	Rigidbody2D rb;
+	Rigidbody2D m_rb;
 
 	// Use this for initialization
 	void Start()
 	{
-		rb = GetComponent<Rigidbody2D>();
+        m_rb = GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
@@ -21,29 +21,30 @@ public class Player : MonoBehaviour
 	{
 		if (Input.GetKey(KeyCode.W))
 		{
-			 rb.velocity += Vector2.up * m_fspeed * Time.deltaTime;
+            m_rb.velocity += Vector2.up * m_fspeed * Time.deltaTime;
 		}
 
 		if (Input.GetKey(KeyCode.S))
 		{
-			rb.velocity -= Vector2.up * m_fspeed * Time.deltaTime;
+            m_rb.velocity -= Vector2.up * m_fspeed * Time.deltaTime;
 		}
 
 		if (Input.GetKey(KeyCode.A))
 		{
-			rb.velocity -= Vector2.right * m_fspeed * Time.deltaTime;
+            m_rb.velocity -= Vector2.right * m_fspeed * Time.deltaTime;
 		}
 
 		if (Input.GetKey(KeyCode.D))
 		{
-			rb.velocity += Vector2.right * m_fspeed * Time.deltaTime;
+            m_rb.velocity += Vector2.right * m_fspeed * Time.deltaTime;
 		}
 
 		if (Input.GetKey(KeyCode.Escape))
 		{
-			Application.Quit();
+            Application.Quit();
 		}
 
+        // Rotation
 		Vector3 pos = Camera.main.WorldToScreenPoint(transform.position);
 		Vector3 dir = Input.mousePosition - pos;
 		float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
