@@ -13,11 +13,12 @@ public class Arm : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void LateUpdate ()
     {
-        distanceBetween = Vector3.Distance(Input.mousePosition, transform.position);
+		Vector3 pos1 = Camera.main.WorldToScreenPoint(transform.position);
+		distanceBetween = Vector3.Distance(pos1, Input.mousePosition);
 
-        if (distanceBetween > 630)
+        if (distanceBetween > 100)
         {
             Vector3 pos = Camera.main.WorldToScreenPoint(transform.position);
             Vector3 dir = Input.mousePosition - pos;
