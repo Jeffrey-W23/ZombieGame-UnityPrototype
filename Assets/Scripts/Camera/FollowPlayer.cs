@@ -7,7 +7,7 @@ public class FollowPlayer : MonoBehaviour
     public GameObject target;
     Vector3 offset;
 
-    void Start() 
+    void Awake() 
     {
         offset = transform.position - target.transform.position;
     }

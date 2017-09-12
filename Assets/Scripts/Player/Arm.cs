@@ -7,13 +7,13 @@ public class Arm : MonoBehaviour
     public float distanceBetween;
 
     // Use this for initialization
-    void Start ()
+    void Awake()
     {
 		
 	}
 	
 	// Update is called once per frame
-	void LateUpdate ()
+	void LateUpdate()
     {
 		Vector3 pos1 = Camera.main.WorldToScreenPoint(transform.position);
 		distanceBetween = Vector3.Distance(pos1, Input.mousePosition);

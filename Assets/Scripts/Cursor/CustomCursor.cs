@@ -7,7 +7,7 @@ public class CustomCursor : MonoBehaviour
 	public Texture2D cursor;
 
 	// Use this for initialization
-	void Start()
+	void Awake()
     {
 		Vector2 cursorHotspot = new Vector2(cursor.width / 2, cursor.height / 2);
 		Cursor.SetCursor(cursor, cursorHotspot, CursorMode.Auto);
