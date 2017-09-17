@@ -1,20 +1,32 @@
-﻿using System.Collections;
+﻿// Using, etc
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//--------------------------------------------------------------------------------------
+// CustomCursor object. Inheriting from MonoBehaviour
+//--------------------------------------------------------------------------------------
 public class CustomCursor : MonoBehaviour
 {
-	public Texture2D cursor;
+    // Public texture for the cursor visuals.
+	public Texture2D m_TCursor;
 
-	// Use this for initialization
-	void Awake()
+    //--------------------------------------------------------------------------------------
+    // initialization
+    //--------------------------------------------------------------------------------------
+    void Awake()
     {
-		Vector2 cursorHotspot = new Vector2(cursor.width / 2, cursor.height / 2);
-		Cursor.SetCursor(cursor, cursorHotspot, CursorMode.Auto);
+        // Set the mouse click point.
+		Vector2 v2CursorHotspot = new Vector2(m_TCursor.width / 2, m_TCursor.height / 2);
+
+        // Set the cursor values.
+        Cursor.SetCursor(m_TCursor, v2CursorHotspot, CursorMode.Auto);
 	}
-	
-	// Update is called once per frame
-	void Update()
+
+    //--------------------------------------------------------------------------------------
+    // Update: Function that calls each frame to update game objects.
+    //--------------------------------------------------------------------------------------
+    void Update()
     {
 
     }

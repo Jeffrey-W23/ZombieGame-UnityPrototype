@@ -1,22 +1,38 @@
-﻿using System.Collections;
+﻿// Using, etc
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//--------------------------------------------------------------------------------------
+// FollowPlayer object. Inheriting from MonoBehaviour
+//--------------------------------------------------------------------------------------
 public class FollowPlayer : MonoBehaviour
 {
-    public GameObject target;
-    Vector3 offset;
+    // Public Gameobject for the target the camera is to follow.
+    public GameObject m_tTarget;
 
+    // offset value
+    Vector3 m_v3Offset;
+
+    //--------------------------------------------------------------------------------------
+    // initialization
+    //--------------------------------------------------------------------------------------
     void Awake() 
     {
-        offset = transform.position - target.transform.position;
+        // set the offset value.
+        m_v3Offset = transform.position - m_tTarget.transform.position;
     }
-	
-	void Update()
-    {
-        float newXPosition = target.transform.position.x - offset.x;
-        float newYPosition = target.transform.position.y - offset.y;
 
-        transform.position = new Vector3(newXPosition, newYPosition, transform.position.z);
+    //--------------------------------------------------------------------------------------
+    // Update: Function that calls each frame to update game objects.
+    //--------------------------------------------------------------------------------------
+    void Update()
+    {
+        // Calc the new x and y position of the camera
+        float fNewXPosition = m_tTarget.transform.position.x - m_v3Offset.x;
+        float fNewYPosition = m_tTarget.transform.position.y - m_v3Offset.y;
+
+        // Update the postion.
+        transform.position = new Vector3(fNewXPosition, fNewYPosition, transform.position.z);
     }	
 }
