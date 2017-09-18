@@ -11,8 +11,8 @@ public class Pistol : MonoBehaviour {
     // Public gameobject for bullet object.
 	public GameObject m_gBlueprint;
 
-    // An Array of GameObjects for bullets.
-	GameObject[] m_gBulletList;
+	// An Array of GameObjects for bullets.
+	private GameObject[] m_gBulletList;
 
     // pool size. how many bullet allowd on screen at once.
 	public int m_nPoolSize;

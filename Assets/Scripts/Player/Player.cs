@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
 	public float m_fspeed = 0.002f;
 
 	// New rigidbody.
-	Rigidbody2D m_rb;
+	private Rigidbody2D m_rb;
 
     //--------------------------------------------------------------------------------------
     // initialization

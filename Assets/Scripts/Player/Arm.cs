@@ -8,12 +8,20 @@ public class Arm : MonoBehaviour
     // float for the distance between mouse and object.
     float m_fDistanceBetween;
 
-    //--------------------------------------------------------------------------------------
-    // initialization
-    //--------------------------------------------------------------------------------------
-    void Awake()
+	// Weapon prefab.
+	public GameObject m_gWeaponPrefab;
+
+	// The Pistol weapon.
+	private GameObject m_gPistol;
+
+	//--------------------------------------------------------------------------------------
+	// initialization
+	//--------------------------------------------------------------------------------------
+	void Awake()
     {
-		
+		// Set the parenting of pistol prefab.
+		m_gPistol = Instantiate(m_gWeaponPrefab);
+		m_gPistol.transform.parent = transform;
 	}
 
     //--------------------------------------------------------------------------------------

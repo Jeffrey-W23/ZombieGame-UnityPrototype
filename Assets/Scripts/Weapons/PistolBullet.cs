@@ -8,11 +8,11 @@ using UnityEngine;
 //--------------------------------------------------------------------------------------
 public class PistolBullet : MonoBehaviour
 {
-    // New rigidbody
-    Rigidbody2D m_rb;
+	// New rigidbody
+	private Rigidbody2D m_rb;
 
-    // Vector2 for bullet direction.
-	Vector2 m_v2Dir;
+	// Vector2 for bullet direction.
+	private Vector2 m_v2Dir;
 
     // Public float for the bullet speed.
 	public float m_fSpeed = 15;

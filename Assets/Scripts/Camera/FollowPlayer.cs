@@ -11,8 +11,8 @@ public class FollowPlayer : MonoBehaviour
     // Public Gameobject for the target the camera is to follow.
     public GameObject m_tTarget;
 
-    // offset value
-    Vector3 m_v3Offset;
+	// offset value
+	private Vector3 m_v3Offset;
 
     //--------------------------------------------------------------------------------------
     // initialization
